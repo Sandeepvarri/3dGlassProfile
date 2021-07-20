@@ -1,0 +1,97 @@
+:root{
+    background-color: #000;
+    font-size: 75px;
+  }
+  body{
+    perspective: 10em;
+    perspective-origin: calc(50% - 1em)  calc(50% - 2em);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  .Glass{
+    width: 5em;
+    height: 2em;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: GlassRotate 20s infinite linear;
+  }
+  
+  @keyframes GlassRotate {
+    to{transform : rotateY(360deg) ;}
+  }
+  
+  
+   .front, .back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .front{
+     transform: translateZ(0.1em); 
+     box-shadow: -5px -1px .2em #fff7 inset;
+     transform-style: preserve-3d;
+  }
+  
+  .back {
+    transform: rotateY(180deg) translateZ(0.1em);
+    box-shadow: 5px 1px .2em #fff7 inset;
+  }
+  
+  .right, .left{
+    position: absolute;
+    width: 0.2em;
+    height: 100%;
+  }
+  
+  .right{
+    transform: rotateY(90deg) translateZ(4.9em);
+    background-color: #0ff5;
+  }
+  
+  .left{
+    transform: rotateY(270deg) translateZ(0.1em);
+    background-color: #0ff5;
+  }
+  
+  
+  .top, .bottom{
+    position: absolute;
+    width: 0.2em;
+    height: 5em;
+    background-color: #0ff7;
+  }
+  
+  .top{
+    left: -.1em;
+    transform: rotateX(90deg) rotate(270deg);
+    transform-origin: top;
+  }
+  
+  .bottom{
+    left: -.1em;
+    top: 2em;
+    transform: rotateX(90deg) rotate(270deg);
+    transform-origin: top;
+    box-shadow: 0 0 .5em #000 inset;
+    
+  }
+  
+  .profileName{
+    text-align: center;
+    font-size: 25px;
+    color: #fff0;
+    text-shadow: 1px 1px #fff7;
+    transform: translateZ(-.1em);
+    margin-top: 10%;
+  }
+  
+  .profilePhoto{
+    float: left;
+    height: 2em;
+    width: 2em;
+    opacity: 0.7;
+    transform: translateZ(-.1em);
+  }
